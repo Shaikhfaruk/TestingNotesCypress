@@ -273,13 +273,8 @@ describe("Login Test", () => {
 ```javascript
 describe("Logout Test", () => {
   it("Logout", () => {
-    cy.visit("http://localhost:3000/login");
-    cy.get('input[name="email"]').type("
-    cy.get('input[name="password"]').type("Faruk123@");
-    cy.get('button[type="submit"]').click();
-    cy.url().should("include", "http://localhost:3000/dashboard");
-    cy.get("button").contains("Logout").click();
-    cy.url().should("include", "http://localhost:3000/login");
-    });
+    // remove the cookie
+    cy.clearCookie("token");
+  });
 });
 ```
