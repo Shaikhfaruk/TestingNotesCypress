@@ -157,3 +157,19 @@ cy.get("[attribute^='value']");
 ```javascript
 cy.get("[attribute*='value']");
 ```
+
+# Code Snippets
+
+## To login
+
+```javascript
+describe("Login Test", () => {
+  it("Login with valid credentials", () => {
+    cy.visit("http://localhost:3000/login");
+    cy.get('input[name="email"]').type("sfaruk1137@gmail.com");
+    cy.get('input[name="password"]').type("Faruk123@");
+    cy.get('button[type="submit"]').click();
+    cy.url().should("include", "http://localhost:3000/dashboard");
+  });
+});
+```
