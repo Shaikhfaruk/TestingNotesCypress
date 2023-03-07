@@ -158,6 +158,100 @@ cy.get("[attribute^='value']");
 cy.get("[attribute*='value']");
 ```
 
+# Actions
+
+### To click on the element
+
+```javascript
+cy.get("button").click();
+```
+
+### To type in the element
+
+```javascript
+cy.get("input").type("Faruk");
+```
+
+### To clear the element
+
+```javascript
+cy.get("input").clear();
+```
+
+### To select the element
+
+```javascript
+cy.get("select").select("Faruk");
+```
+
+### To check the element
+
+```javascript
+cy.get("input").check();
+```
+
+### To uncheck the element
+
+```javascript
+cy.get("input").uncheck();
+```
+
+# Assertions
+
+### To check the title of the page
+
+```javascript
+cy.title().should("eq", "Pitchspot");
+```
+
+### To check the URL of the page
+
+```javascript
+cy.url().should("include", "http://localhost:3000");
+```
+
+### To check the element is visible
+
+```javascript
+cy.get("button").should("be.visible");
+```
+
+### To check the element is not visible
+
+```javascript
+cy.get("button").should("not.be.visible");
+```
+
+### To check the element is enabled
+
+```javascript
+cy.get("button").should("be.enabled");
+```
+
+### To check the element is disabled
+
+```javascript
+cy.get("button").should("be.disabled");
+```
+
+### To check the element is checked
+
+```javascript
+cy.get("input").should("be.checked");
+```
+
+### To check the element is not checked
+
+```javascript
+cy.get("input").should("not.be.checked");
+```
+
+### To check the element is selected
+
+```javascript
+cy.get("select").should("be.selected");
+```
+
 # Code Snippets
 
 ## To login
@@ -171,5 +265,21 @@ describe("Login Test", () => {
     cy.get('button[type="submit"]').click();
     cy.url().should("include", "http://localhost:3000/dashboard");
   });
+});
+```
+
+## To logout
+
+```javascript
+describe("Logout Test", () => {
+  it("Logout", () => {
+    cy.visit("http://localhost:3000/login");
+    cy.get('input[name="email"]').type("
+    cy.get('input[name="password"]').type("Faruk123@");
+    cy.get('button[type="submit"]').click();
+    cy.url().should("include", "http://localhost:3000/dashboard");
+    cy.get("button").contains("Logout").click();
+    cy.url().should("include", "http://localhost:3000/login");
+    });
 });
 ```
