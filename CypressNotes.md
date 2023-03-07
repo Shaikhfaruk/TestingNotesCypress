@@ -82,6 +82,26 @@ cy.title();
 cy.url();
 ```
 
+### Here is a Example
+
+```javascript
+describe("My First Test", () => {
+  it("verify title-positive", () => {
+    // lunch the app
+    cy.visit("http://localhost:3000/");
+    // check the title
+    cy.title().should("eq", "Pitchspot");
+  });
+
+  it("verify title-negative", () => {
+    // lunch the app
+    cy.visit("http://localhost:3000/");
+    // check the title
+    cy.title().should("eq", "Pitchspot1");
+  });
+});
+```
+
 # Locators
 
 ### To get the element by ID
