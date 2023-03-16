@@ -278,3 +278,39 @@ describe("Logout Test", () => {
   });
 });
 ```
+
+## Before and After
+
+```javascript
+describe("My First Test", () => {
+  before(() => {
+    // runs once before all tests in the block
+  });
+
+  after(() => {
+    // runs once after all tests in the block
+  });
+
+  beforeEach(() => {
+    // runs before each test in the block
+  });
+
+  afterEach(() => {
+    // runs after each test in the block
+  });
+
+  it("verify title-positive", () => {
+    // lunch the app
+    cy.visit("http://localhost:3000/");
+    // check the title
+    cy.title().should("eq", "Pitchspot");
+  });
+
+  it("verify title-negative", () => {
+    // lunch the app
+    cy.visit("http://localhost:3000/");
+    // check the title
+    cy.title().should("eq", "Pitchspot1");
+  });
+});
+```
