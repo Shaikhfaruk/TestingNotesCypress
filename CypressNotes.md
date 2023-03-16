@@ -440,3 +440,26 @@ describe("My First Test", () => {
   });
 });
 ```
+
+# Add Environment Variables
+
+### First we have to create a file called cypress.env.json
+
+```json
+{
+  "baseUrl": "http://localhost:3000"
+}
+```
+
+### Then we can use it in our test
+
+```javascript
+describe("My First Test", () => {
+  it("verify title-positive", () => {
+    // lunch the app
+    cy.visit(Cypress.env("baseUrl"));
+    // check the title
+    cy.title().should("eq", "Pitchspot");
+  });
+});
+```
