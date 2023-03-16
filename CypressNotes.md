@@ -314,3 +314,129 @@ describe("My First Test", () => {
   });
 });
 ```
+
+## Should vs Expect
+
+```javascript
+describe("My First Test", () => {
+  it("verify title-positive", () => {
+    // lunch the app
+    cy.visit("http://localhost:3000/");
+    // check the title
+    cy.title().should("eq", "Pitchspot");
+    cy.title().should("include", "Pitch");
+    cy.title().should("not.eq", "Pitchspot1");
+    cy.title().should("not.include", "Pitch1");
+  });
+
+  it("verify title-positive", () => {
+    // lunch the app
+    cy.visit("http://localhost:3000/");
+    // check the title
+    expect(cy.title()).to.eq("Pitchspot");
+    expect(cy.title()).to.include("Pitch");
+    expect(cy.title()).to.not.eq("Pitchspot1");
+    expect(cy.title()).to.not.include("Pitch1");
+  });
+});
+```
+
+## Should all Methods
+
+```javascript
+describe("My First Test", () => {
+  it("verify title-positive", () => {
+    // lunch the app
+    cy.visit("http://localhost:3000/");
+    // check the title
+    cy.title().should("eq", "Pitchspot");
+    cy.title().should("include", "Pitch");
+    cy.title().should("not.eq", "Pitchspot1");
+    cy.title().should("not.include", "Pitch1");
+  });
+});
+```
+
+## Class prasent or not
+
+```javascript
+describe("My First Test", () => {
+  it("verify title-positive", () => {
+    // lunch the app
+    cy.visit("http://localhost:3000/");
+    // check the title
+    cy.get("button").should("have.class", "btn");
+    cy.get("button").should("not.have.class", "btn1");
+  });
+});
+```
+
+## ID prasent or not
+
+```javascript
+describe("My First Test", () => {
+  it("verify title-positive", () => {
+    // lunch the app
+    cy.visit("http://localhost:3000/");
+    // check the title
+    cy.get("button").should("have.id", "btn");
+    cy.get("button").should("not.have.id", "btn1");
+  });
+});
+```
+
+## Attribute prasent or not
+
+```javascript
+describe("My First Test", () => {
+  it("verify title-positive", () => {
+    // lunch the app
+    cy.visit("http://localhost:3000/");
+    // check the title
+    cy.get("button").should("have.attr", "type", "submit");
+    cy.get("button").should("not.have.attr", "type", "button");
+  });
+});
+```
+
+## Value prasent or not
+
+```javascript
+describe("My First Test", () => {
+  it("verify title-positive", () => {
+    // lunch the app
+    cy.visit("http://localhost:3000/");
+    // check the title
+    cy.get("button").should("have.value", "Submit");
+    cy.get("button").should("not.have.value", "Submit1");
+  });
+});
+```
+
+## Text prasent or not
+
+```javascript
+describe("My First Test", () => {
+  it("verify title-positive", () => {
+    // lunch the app
+    cy.visit("http://localhost:3000/");
+    // check the title
+    cy.get("button").should("have.text", "Submit");
+    cy.get("button").should("not.have.text", "Submit1");
+  });
+});
+```
+
+## To check color of the element
+
+```javascript
+describe("My First Test", () => {
+  it("verify title-positive", () => {
+    // lunch the app
+    cy.visit("http://localhost:3000/");
+    // check the title
+    cy.get("button").should("have.css", "background-color", "rgb(0, 0, 255)");
+    cy.get("button").should("not.have.css", "background-color", "rgb(0, 0, 0)");
+  });
+});
+```
