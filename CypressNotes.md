@@ -463,3 +463,55 @@ describe("My First Test", () => {
   });
 });
 ```
+
+## Mouse and Keyboard Events
+
+```javascript
+describe("My First Test", () => {
+  it("verify title-positive", () => {
+    // lunch the app
+    cy.visit(Cypress.env("baseUrl"));
+    // check the title
+    cy.title().should("eq", "Pitchspot");
+    cy.get("button").click();
+    cy.get("button").dblclick();
+    cy.get("button").rightclick();
+    cy.get("button").trigger("mouseover");
+    cy.get("button").trigger("mouseout");
+    cy.get("button").trigger("mousedown");
+    cy.get("button").trigger("mouseup");
+    cy.get("button").trigger("mousemove");
+    cy.get("button").trigger("mouseenter");
+    cy.get("button").trigger("mouseleave");
+    cy.get("button").trigger("keydown");
+    cy.get("button").trigger("keyup");
+    cy.get("button").trigger("keypress");
+    cy.get("button").trigger("focus");
+    cy.get("button").trigger("blur");
+    cy.get("button").trigger("change");
+    cy.get("button").trigger("submit");
+    cy.get("button").trigger("scroll");
+    cy.get("button").trigger("select");
+    cy.get("button").trigger("drag");
+    cy.get("button").trigger("dragend");
+    cy.get("button").trigger("dragenter");
+    cy.get("button").trigger("dragleave");
+    cy.get("button").trigger("dragover");
+    cy.get("button").trigger("dragstart");
+    cy.get("button").trigger("drop");
+    cy.get("button").trigger("copy");
+    cy.get("button").trigger("cut");
+    cy.get("button").trigger("paste");
+    cy.get("button").trigger("input");
+    cy.get("button").trigger("invalid");
+    cy.get("button").trigger("reset");
+    cy.get("button").trigger("search");
+    cy.get("button").trigger("select");
+    cy.get("button").trigger("touchcancel");
+    cy.get("button").trigger("touchend");
+    cy.get("button").trigger("touchmove");
+    cy.get("button").trigger("touchstart");
+    cy.get("button").trigger("wheel");
+  });
+});
+```
