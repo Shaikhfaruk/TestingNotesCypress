@@ -530,3 +530,19 @@ describe("My First Test", () => {
   });
 });
 ```
+
+### Enter Key and type some text
+
+```javascript
+describe("My First Test", () => {
+  it("verify title-positive", () => {
+    // lunch the app
+    cy.visit(Cypress.env("baseUrl"));
+    // check the title
+    cy.title().should("eq", "Pitchspot");
+    cy.get("input").type("Hello");
+    cy.get("input").type("{enter}");
+    cy.get("input").type("World");
+  });
+});
+```
