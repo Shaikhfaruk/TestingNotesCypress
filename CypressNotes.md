@@ -546,3 +546,18 @@ describe("My First Test", () => {
   });
 });
 ```
+
+# Click Multiple Elements under Class or Data-Test
+
+```javascript
+it("Click Multiple Elements under Class or Data-Test", () => {
+  cy.get('div[dataTest="publishToServicesChecks"]')
+    .find("span")
+    .each(($el) => {
+      cy.wrap($el).click({
+        force: true,
+        multiple: true,
+      });
+    });
+});
+```
